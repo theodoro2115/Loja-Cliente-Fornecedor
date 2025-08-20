@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/consultar_for.css">
+    <title>Consulta de Fornecedores</title>
+</head>
+<body>
+    <img class="avatar" src="static/assets/{{ usuario[4] }}" alt="" style="width: 40px;">
+    <nav>
+        <ul>
+            <li><a href="/cliente">Cadastrar Clientes</a></li> 
+            <li><a href="/consultaclie">Consultar Clientes</a></li>
+            <li><a href="/fornecedor">Cadastrar Fornecedores</a></li>
+            <li><a href="/consultafor">Consultar Fornecedores</a></li>
+
+            <li><a href="/logout">Sair</a></li>
+        </ul>
+    </nav>
+
+    <div class="table-container">
+        <h2>Lista de Fornecedores</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                  
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fornecedores in fornecedores %}
+                <tr>
+                    
+                    <td>{{ fornecedores[1] }}</td>
+                    <td>{{ fornecedores[2] }}</td>
+                    <td>{{ fornecedores[3] }}</td>
+                    <td>
+                        <a href="/ver_fornecedor/{{ fornecedores[0] }}">Ver</a> |
+                        <a href="/excluir_fornecedor/{{ fornecedores[0] }}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

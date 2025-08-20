@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Cliente</title>
+    <link rel="stylesheet" href="/static/styles/ver_cliente.css">
+</head>
+<body>
+    <img class="avatar" src="static/assets/{{ usuario[4] }}" alt="" style="width: 40px;">
+    <div class="container">
+        <h2>Detalhes do Cliente</h2>
+        <p><strong>Nome:</strong> {{ cliente[1] }}</p>
+        <p><strong>Email:</strong> {{ cliente[2] }}</p>
+        <p><strong>Telefone:</strong> {{ cliente[3] }}</p>
+        <p><strong>CPF:</strong> {{ cliente[4] }}</p>
+        <p><strong>CEP:</strong> {{ cliente[5] }}</p>
+        <p><strong>Endereço:</strong> {{ cliente[6] }}</p>
+        <p><strong>Cidade:</strong> {{ cliente[7] }}</p>
+        <p><strong>Estado:</strong> {{ cliente[8] }}</p>
+        <p><strong>Data de Cadastro:</strong> {{ cliente[9] }}</p>
+        <a href="/editarclie/{{ cliente[0] }}" class="edit-button">Editar</a>
+    </div>
+</body>
+</html>

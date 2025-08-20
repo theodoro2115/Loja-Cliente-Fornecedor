@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Avatar</title>
+    <link rel="stylesheet" href="/static/styles/avatar.css">
+</head>
+<body>
+    <h2>Escolha seu Avatar</h2>
+    <form id="avatar-form" method="POST" action="{{ url_for('escolher_foto') }}">
+        <div class="avatar-container">
+            <!-- Exibe avatares disponíveis -->
+            {% for avatar in avatares_disponiveis %}
+                <img src="{{ url_for('static', filename='assets/avatar/' + avatar) }}" 
+                     alt="Avatar {{ avatar }}" 
+                     class="avatar {% if avatar == avatar_aleatorio %}selected{% endif %}" 
+                     onclick="selecionarAvatar('{{ avatar }}', this)">
+            {% endfor %}
+        </div>
+        <input type="hidden" name="avatar_selecionado" id="avatar_selecionado" value="{{ avatar_aleatorio }}">
+        <button type="submit">Salvar Avatar</button>
+    </form>
+
+    <script>
+        function selecionarAvatar(avatar, imgElement) {
+            // Atualiza o campo oculto com o avatar selecionado
+            document.getElementById('avatar_selecionado').value = avatar;
+
+            // Remove a classe 'selected' de todas as imagens
+            const avatars = document.querySelectorAll('.avatar');
+            avatars.forEach(a => a.classList.remove('selected'));
+
+            // Adiciona a classe 'selected' ao avatar clicado
+            imgElement.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

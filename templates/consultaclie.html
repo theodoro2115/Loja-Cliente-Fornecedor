@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/consulta_clie.css">
+    <title>Consulta de Clientes</title>
+</head>
+<body>
+    <img class="avatar" src="static/assets/{{ usuario[4] }}" alt="" style="width: 40px;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/cliente">Cadastrar Clientes</a></li>
+                <li><a href="/consultaclie">Consultar Clientes</a></li>
+                <li><a href="/fornecedor">Cadastrar Fornecedores</a></li>
+                <li><a href="/consultafor">Consultar Fornecedores</a></li>
+                <li><a href="/">Sair</a></li>   
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="table-container">
+        <h1>Lista de Clientes</h1>
+        <table border="1">
+            <thead>
+                <tr>
+
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente[1] }}</td>
+                    <td>{{ cliente[2] }}</td>
+                    <td>{{ cliente[3] }}</td>
+                
+                    <td>
+                        <a href="/ver_cliente/{{ cliente[0] }}">Ver</a> |
+                        <a href="/excluir_cliente/{{ cliente[0] }}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

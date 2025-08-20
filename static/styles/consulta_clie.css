@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --fonte-principal: "Oswald", sans-serif;
+    --fonte-titulo: "Playfair Display", sans-serif;
+    --cor-principal: #B8C1FF;
+    --cor-link: #539dd4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../assets/imagem_fundo.jpg'); /* Caminho relativo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    color: var(--cor-principal);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding-top: 4rem;
+}
+
+nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-right: 5.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 1rem;
+    position: left 10px;
+    right: 10%;
+    top: 50%;
+}
+
+nav ul li a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: var(--fonte-titulo);
+    
+}
+
+nav ul li a:hover {
+    color: var(--cor-link); 
+}
+
+.table-container {
+    width: 90%;
+    max-width: 1200px;
+    overflow-x: auto;
+    background-color: rgba(24, 38, 102, 0.8);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: -0rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--cor-principal);
+    margin-left: 28rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    color: var(--cor-principal);
+    font-family: var(--fonte-principal);
+}
+
+th {
+    background-color: #465ACB;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+td {
+    background-color: rgba(24, 38, 102, 0.5);
+}
+
+a {
+    color: var(--cor-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+td a {
+    font-weight: bold;
+}
+
+td a:hover {
+    color: var(--cor-principal);
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .table-container {
+        padding: 2rem;
+    }
+    th, td {
+        padding: 5px;
+        font-size: 0.9rem;
+    }
+}
+
+.avatar {
+    position: fixed;
+    top: 10px;
+    left: 1470px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

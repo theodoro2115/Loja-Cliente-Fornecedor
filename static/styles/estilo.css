@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import 'animate.css';
+
+:root {
+    --fonte-principal: "Oswald", sans-serif;
+    --fonte-titulo: "Playfair Display", sans-serif;
+    --cor-principal: #B8C1FF;
+    --cor-fundo: rgba(24, 38, 102, 0.8);
+    --cor-botao: #465ACB;
+    --cor-link: #539dd4;
+    --animation-delay: 1s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-color: #3548a2;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--fonte-principal);
+    color: var(--cor-principal);
+}
+
+.video-background {
+    position: fixed;
+    width: 100%;
+    height: 130vh; /* Altura da tela inteira */
+    overflow: hidden;
+}
+ 
+.video-background video {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche todo o espaco sem distorcer */
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate_fadeIn {
+    animation: fadeIn 1.5s ease-in-out; /* Duração de 1 segundo */
+}   
+
+.logo {
+    width: 100px;
+}
+
+.login-container {
+    background-color: var(--cor-fundo);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+    top: 20%;
+    right: 490px;
+    position: absolute;
+}
+
+.login-container img {
+    width: 190px;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--cor-botao);
+    border-radius: 15px;
+    background-color: #182666;
+    color: var(--cor-principal);
+    font-size: 1.2rem;
+    font-family: var(--fonte-principal);
+    font-weight: bold;
+}
+
+input::placeholder {
+    color: var(--cor-principal);
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--cor-botao);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3548a2;
+}
+
+.cadastro-link {
+    margin-top: 1.5rem; /* Espaçamento maior acima */
+    font-size: 0.9rem;
+}
+
+.cadastro-link a {
+    color: var(--cor-link); /* Cor amarela para destaque */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cadastro-link a:hover {
+    text-decoration: underline;
+    color: #465ACB;
+}
